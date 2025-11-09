@@ -1,18 +1,33 @@
 name: CI
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
+  push:
     branches: [ "main" ]
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install yamllint
-      - run: yamllint -c .yamllint .
+
+      - name: Install tools
+        run: |
+          pip install yamllint
+          curl -L -o kubeconform.tar.gz https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz
+          tar -xzf kubeconform.tar.gz
+          sudo mv kubeconform /usr/local/bin/kubeconform
+
+      - name: YAML lint
+        run: yamllint -c .yamllint .
+
+      - name: Kubernetes schema validation
+        if: ${{ hashFiles('config/k8s/**.y*ml') != '' }}
+        run: kubeconform -ignore-missing-schemas -summary -verbose config/k8s
