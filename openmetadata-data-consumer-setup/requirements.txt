@@ -1,0 +1,11 @@
+# Core dependencies for Data Consumer setup scripts
+requests>=2.31.0
+PyYAML>=6.0.1
+
+# Optional (uncomment if needed)
+# Flask>=3.0.2
+# pytest>=8.3.2
+
+# If you need data processing locally, use versions compatible with Python 3.12:
+numpy>=1.26.4
+pandas>=2.2.2

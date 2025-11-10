@@ -1,0 +1,6 @@
+name: data-consumer
+displayName: Data Consumer
+description: "Business/data consumer med fokus på sök & beskrivning av dataprodukter."
+uiCustomizationName: data-consumer-ui
+default: false
+headerColor: "#0F62FE"

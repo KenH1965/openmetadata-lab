@@ -1,0 +1,18 @@
+widget:
+  name: Data Products Widget
+  description: Displays key metrics and a list of data products for business users.
+  layout:
+    type: grid
+    columns: 2
+    rows: 3
+  dataSources:
+    - type: api
+      endpoint: /api/data-products
+      method: GET
+  refreshInterval: 300
+  displaySettings:
+    showMetrics: true
+    showList: true
+    metrics:
+      - totalProducts
+      - activeProducts
