@@ -28,3 +28,6 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# Legacy JSON config (now replaced by YAML) - ignore if recreated locally
+src/config/*.json
