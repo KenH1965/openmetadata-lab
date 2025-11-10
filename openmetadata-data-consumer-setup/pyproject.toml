@@ -1,0 +1,22 @@
+[tool]
+name = "openmetadata-data-consumer-setup"
+version = "0.1.0"
+description = "Setup scripts and UI customization for Data Consumer role in Open Metadata"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dependencies = [
+    "requests",
+    "pandas",
+    "numpy"
+]
+
+[tool.poetry.scripts]
+createDataConsumerRole = "src.scripts.createDataConsumerRole:create_role"
+createPersona = "src.scripts.createPersona:create_persona"
+addWidgetToUI = "src.scripts.addWidgetToUI:add_widget"

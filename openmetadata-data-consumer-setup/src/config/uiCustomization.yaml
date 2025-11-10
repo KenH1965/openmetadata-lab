@@ -1,0 +1,83 @@
+name: data-consumer-ui
+displayName: Data Consumer UI
+description: Minimal landing + navigation for business/data consumers
+pages:
+  - id: landing
+    displayName: Home
+    layout:
+      type: grid
+      columns: 12
+    tabs:
+      - id: main
+        displayName: Main
+        editable: false
+        layout:
+          type: grid
+          columns: 12
+        knowledgePanels:
+          - type: SearchHero
+            x: 0
+            y: 0
+            w: 12
+            h: 3
+          - type: CuratedDomains
+            title: Utforska domäner
+            x: 0
+            y: 3
+            w: 6
+            h: 4
+          - type: PopularAssets
+            title: Populära dataprodukter
+            x: 6
+            y: 3
+            w: 6
+            h: 4
+          - type: RecentlyViewed
+            title: Senast visade
+            x: 0
+            y: 7
+            w: 6
+            h: 4
+          - type: Announcements
+            title: Meddelanden
+            x: 6
+            y: 7
+            w: 6
+            h: 4
+navigation:
+  - id: nav-home
+    title: Home
+    pageId: landing
+    isHidden: false
+  - id: nav-explore
+    title: Explore
+    pageId: explore
+    isHidden: false
+  - id: nav-domains
+    title: Domains
+    pageId: domains
+    isHidden: false
+  - id: nav-dp
+    title: Data Products
+    pageId: data-products
+    isHidden: false
+  - id: nav-gov
+    title: Governance
+    pageId: governance
+    isHidden: true
+  - id: nav-quality
+    title: Data Quality
+    pageId: quality
+    isHidden: true
+  - id: nav-services
+    title: Services
+    pageId: services
+    isHidden: true
+  - id: nav-settings
+    title: Settings
+    pageId: settings
+    isHidden: true
+personaPreferences:
+  - personaName: Data Consumer
+    landingPageSettings:
+      headerColor: "#0F62FE"

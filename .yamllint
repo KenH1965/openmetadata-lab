@@ -1,5 +1,10 @@
 extends: default
+ignore: |
+  .github/workflows/*.yml
+  .github/workflows/*.yaml
 rules:
   line-length: disable
   truthy:
     allowed-values: ['true', 'false', 'on', 'off', 'yes', 'no']
+  document-start: disable
+  comments-indentation: disable

@@ -1,0 +1,14 @@
+role: Data Consumer
+permissions:
+  view: true
+  edit: false
+  delete: false
+  search: true
+policies:
+  - name: Data Access Policy
+    description: Allows viewing and searching of data products without editing capabilities.
+    rules:
+      - action: view
+        resource: data_products
+      - action: search
+        resource: data_products

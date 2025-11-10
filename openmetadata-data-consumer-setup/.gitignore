@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+ENV/
+
+# Node / JS
+node_modules/
+
+# OS / Editor
+.DS_Store
+*.swp
+*.swo
+
+# Test caches
+.pytest_cache/
+coverage.xml
+htmlcov/
+
+# Logs
+*.log
+
+# Package build artifacts
+dist/
+build/
+*.egg-info/
+
+# Legacy JSON config (now replaced by YAML) - ignore if recreated locally
+src/config/*.json
